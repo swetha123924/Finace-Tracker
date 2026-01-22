@@ -122,6 +122,16 @@ const Sidebar = ({ isOpen, onClose, activeTab, setActiveTab }) => {
             </ul>
           </nav>
 
+          {/* Footer with related text and email */}
+          <div className="p-4 border-t border-gray-200 dark:border-gray-700">
+            <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
+              This app helps you split expenses easily and fairly among friends and groups.
+            </p>
+            <p className="text-xs text-gray-500 dark:text-gray-400 text-center mt-2">
+              Contact: <a href="mailto:cswetha061@gmail.com" className="text-emerald-500 hover:text-emerald-600">cswetha061@gmail.com</a>
+            </p>
+          </div>
+
         </div>
       </aside>
     </>
