@@ -1,5 +1,4 @@
-// Base points at deployed backend (Render) and includes /api prefix to match server routes
-const API_BASE_URL = 'https://finace-tracker-zgrg.onrender.com/api';
+const API_BASE_URL = 'https://finace-tracker-zgrg.onrender.com';
 
 // Helper function to get auth headers
 const getAuthHeaders = () => {
@@ -38,29 +37,29 @@ const apiRequest = async (endpoint, options = {}) => {
 
 // Auth API
 export const authAPI = {
-  register: (userData) => apiRequest('/auth/register', {
+  register: (userData) => apiRequest('/api/auth/register', {
     method: 'POST',
     body: JSON.stringify(userData),
   }),
   
-  login: (credentials) => apiRequest('/auth/login', {
+  login: (credentials) => apiRequest('/api/auth/login', {
     method: 'POST',
     body: JSON.stringify(credentials),
   }),
   
-  getProfile: () => apiRequest('/auth/profile'),
+  getProfile: () => apiRequest('/api/auth/profile'),
   
-  updateProfile: (data) => apiRequest('/auth/profile', {
+  updateProfile: (data) => apiRequest('/api/auth/profile', {
     method: 'PUT',
     body: JSON.stringify(data),
   }),
   
-  updateSettings: (settings) => apiRequest('/auth/settings', {
+  updateSettings: (settings) => apiRequest('/api/auth/settings', {
     method: 'PUT',
     body: JSON.stringify(settings),
   }),
   
-  changePassword: (passwords) => apiRequest('/auth/change-password', {
+  changePassword: (passwords) => apiRequest('/api/auth/change-password', {
     method: 'PUT',
     body: JSON.stringify(passwords),
   }),
@@ -68,68 +67,68 @@ export const authAPI = {
 
 // Members API
 export const membersAPI = {
-  getAll: () => apiRequest('/members'),
+  getAll: () => apiRequest('/api/members'),
   
-  add: (name) => apiRequest('/members', {
+  add: (name) => apiRequest('/api/members', {
     method: 'POST',
     body: JSON.stringify({ name }),
   }),
   
-  update: (id, name) => apiRequest(`/members/${id}`, {
+  update: (id, name) => apiRequest(`/api/members/${id}`, {
     method: 'PUT',
     body: JSON.stringify({ name }),
   }),
   
-  delete: (id) => apiRequest(`/members/${id}`, {
+  delete: (id) => apiRequest(`/api/members/${id}`, {
     method: 'DELETE',
   }),
   
-  getStats: (id) => apiRequest(`/members/${id}/stats`),
+  getStats: (id) => apiRequest(`/api/members/${id}/stats`),
 };
 
 // Expenses API
 export const expensesAPI = {
-  getAll: () => apiRequest('/expenses'),
+  getAll: () => apiRequest('/api/expenses'),
   
-  getOne: (id) => apiRequest(`/expenses/${id}`),
+  getOne: (id) => apiRequest(`/api/expenses/${id}`),
   
-  add: (expense) => apiRequest('/expenses', {
+  add: (expense) => apiRequest('/api/expenses', {
     method: 'POST',
     body: JSON.stringify(expense),
   }),
   
-  update: (id, expense) => apiRequest(`/expenses/${id}`, {
+  update: (id, expense) => apiRequest(`/api/expenses/${id}`, {
     method: 'PUT',
     body: JSON.stringify(expense),
   }),
   
-  delete: (id) => apiRequest(`/expenses/${id}`, {
+  delete: (id) => apiRequest(`/api/expenses/${id}`, {
     method: 'DELETE',
   }),
   
-  getStats: () => apiRequest('/expenses/stats'),
+  getStats: () => apiRequest('/api/expenses/stats'),
   
-  getBalances: () => apiRequest('/expenses/balances'),
+  getBalances: () => apiRequest('/api/expenses/balances'),
 };
 
 // Settlements API
 export const settlementsAPI = {
-  getAll: () => apiRequest('/settlements'),
+  getAll: () => apiRequest('/api/settlements'),
   
-  create: (settlement) => apiRequest('/settlements', {
+  create: (settlement) => apiRequest('/api/settlements', {
     method: 'POST',
     body: JSON.stringify(settlement),
   }),
   
-  complete: (id) => apiRequest(`/settlements/${id}/complete`, {
+  complete: (id) => apiRequest(`/api/settlements/${id}/complete`, {
     method: 'PUT',
   }),
   
-  delete: (id) => apiRequest(`/settlements/${id}`, {
+  delete: (id) => apiRequest(`/api/settlements/${id}`, {
     method: 'DELETE',
   }),
   
-  settleAll: () => apiRequest('/settlements/settle-all', {
+  settleAll: () => apiRequest('/api/settlements/settle-all', {
     method: 'POST',
   }),
 };
