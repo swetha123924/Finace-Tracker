@@ -1,4 +1,5 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5001/api';
+// Base points at deployed backend (Render) and includes /api prefix to match server routes
+const API_BASE_URL = 'https://finace-tracker-zgrg.onrender.com/api';
 
 // Helper function to get auth headers
 const getAuthHeaders = () => {
