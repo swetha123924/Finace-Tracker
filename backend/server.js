@@ -13,7 +13,7 @@ const port = process.env.PORT || 5001;
 // Middleware
 app.use(cors({
   origin: [
-    'https://clinquant-kleicha-fd220f.netlify.app/'
+    'https://funny-moxie-832775.netlify.app'
   ],
   credentials: true
 }));
