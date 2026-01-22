@@ -14,6 +14,7 @@ const apiRequest = async (endpoint, options = {}) => {
   const url = `${API_BASE_URL}${endpoint}`;
   const config = {
     ...options,
+    credentials: 'include',
     headers: {
       ...getAuthHeaders(),
       ...options.headers,
